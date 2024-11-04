@@ -1,0 +1,90 @@
+/* General body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1d, #000000);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Game title */
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #f5c518;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Winner announcement styling */
+#winner {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-top: 15px;
+}
+
+/* Board styling */
+#board {
+    height: 540px;
+    width: 630px;
+    background-color: #f4b400;
+    border: 15px solid #d9802e;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    padding: 10px;
+    transform: perspective(500px) rotateX(5deg);
+}
+
+/* Tile styling */
+.tile {
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+    background-color: #32322a;
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+    box-shadow: inset 0px -4px 8px rgba(0, 0, 0, 0.8), inset 0px 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+/* Tile hover effect */
+.tile:hover {
+    transform: translateY(-3px);
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.8), 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Red piece styling */
+.red-piece {
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #b22222);
+    box-shadow: inset 0px -4px 6px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s;
+}
+
+/* Yellow piece styling */
+.yellow-piece {
+    background: radial-gradient(circle at 30% 30%, #ffeb3b, #c9a00a);
+    box-shadow: inset 0px -4px 6px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s;
+}
+
+/* Glow effect for winning pieces */
+.red-piece.winner,
+.yellow-piece.winner {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+    }
+
+    to {
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+    }
+}
